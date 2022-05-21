@@ -12,13 +12,19 @@ import "math"
 
 type intCustomType int
 
+var (
+	SidesCircle   intCustomType = 0
+	SidesTriangle intCustomType = 3
+	SidesSquare   intCustomType = 4
+)
+
 func CalcSquare(sideLen float64, sidesNum intCustomType) float64 {
 	switch sidesNum {
-	case 0:
+	case SidesCircle:
 		return math.Pi * math.Pow(sideLen, 2.0)
-	case 3:
+	case SidesTriangle:
 		return math.Pow(sideLen, 2.0) * math.Sqrt(3) / 4
-	case 4:
+	case SidesSquare:
 		return math.Pow(sideLen, 2.0)
 	}
 
